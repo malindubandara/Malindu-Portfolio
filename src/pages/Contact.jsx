@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { useSwipeGestures } from "../hooks/useSwipeGestures";
 
 const Contact = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
@@ -11,21 +12,65 @@ const Contact = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
     message: "",
   });
 
+  const [emailError, setEmailError] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+
   const swipeGestures = useSwipeGestures(onSwipeLeft, onSwipeRight, 100);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+
+    if (name === "email") {
+      if (!validateEmail(value)) {
+        setEmailError("Please enter a valid email address.");
+      } else {
+        setEmailError("");
+      }
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!validateEmail(formData.email)) {
+      setEmailError("Please enter a valid email address.");
+      return;
+    }
+
+    emailjs
+      .send(
+        "service_z649gjn",
+        "template_rablrl5",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        "riCcCKaMfTDnjES3T"
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully:", result.text);
+          setShowPopup(true);
+          setTimeout(() => setShowPopup(false), 3000);
+          setFormData({ name: "", email: "", message: "" });
+          setEmailError("");
+        },
+        (error) => {
+          console.error("Email sending failed:", error.text);
+          alert("Failed to send message. Please try again later.");
+        }
+      );
   };
 
   return (
@@ -33,6 +78,11 @@ const Contact = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
       className="py-16 sm:py-20 px-4 sm:px-6 min-h-screen"
       {...swipeGestures}
     >
+      {showPopup && (
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-emerald-500 text-white px-6 py-3 rounded-lg shadow-lg z-50">
+          Message sent successfully!
+        </div>
+      )}
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -50,6 +100,7 @@ const Contact = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -91,8 +142,12 @@ const Contact = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
                 transition={{ duration: 0.2 }}
               >
                 <span className="text-xl sm:text-2xl">💼</span>
-                <a href="">
-                  <span className="text-sm sm:text-base">
+                <a
+                  href="https://www.linkedin.com/in/malindu-bandara"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="text-sm sm:text-base underline">
                     linkedin.com/in/malindu-bandara
                   </span>
                 </a>
@@ -100,6 +155,7 @@ const Contact = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
             </div>
           </motion.div>
 
+          {/* Contact Form */}
           <motion.form
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -136,6 +192,9 @@ const Contact = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
                     : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                 } focus:outline-none focus:ring-2 focus:ring-emerald-400`}
               />
+              {emailError && (
+                <p className="text-red-500 text-sm mt-1">{emailError}</p>
+              )}
             </div>
             <div>
               <textarea
@@ -156,7 +215,7 @@ const Contact = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
               type="submit"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full px-6 sm:px-8 py-3 bg-emerald-400`} text-white rounded-lg font-semibold hover:bg-emerald-600 transition-colors text-sm sm:text-base"
+              className="w-full px-6 sm:px-8 py-3 bg-emerald-400 text-white rounded-lg font-semibold hover:bg-emerald-600 transition-colors text-sm sm:text-base"
             >
               Send Message
             </motion.button>
