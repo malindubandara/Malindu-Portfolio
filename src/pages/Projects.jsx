@@ -12,7 +12,7 @@ const Projects = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const swipeGestures = useSwipeGestures(onSwipeLeft, onSwipeRight, 100);
 
-  const filters = ["All", "Projects", "Dev Tools", "Open Source", "Designs"];
+  const filters = ["All", "Projects", "Designs"];
 
   const projects = [
     {
@@ -23,7 +23,7 @@ const Projects = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
         "Implemented a scalable chat application with real-time updates.",
       fullDescription:
         " Implemented a scalable chat application with real-time updates, supporting group conversation and individual messaging, utilizing WebSocket technology.",
-      category: "Dev Tools",
+      category: "Projects",
       image: "/placeholder.svg?height=300&width=400",
       gradient: "from-purple-400 to-pink-400",
       bgColor: "bg-gradient-to-br from-black-100 to-green-200",
@@ -37,102 +37,86 @@ const Projects = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
         "Responsive design",
       ],
     },
-    // {
-    //   id: 2,
-    //   title: "Scoutbar",
-    //   subtitle: "Navigation is hard lets automate it",
-    //   description:
-    //     "A command palette for your website that helps users navigate faster.",
-    //   fullDescription:
-    //     "Scoutbar is a powerful command palette component that enhances user navigation experience. It provides instant search functionality, keyboard shortcuts, and intelligent suggestions to help users find what they're looking for quickly and efficiently.",
-    //   category: "Open Source",
-    //   image: "/placeholder.svg?height=300&width=400",
-    //   bgColor: "bg-slate-800",
-    //   textColor: "text-white",
-    //   techStack: ["React", "JavaScript", "CSS Modules", "Fuse.js", "Portal"],
-    //   githubUrl: "https://github.com/yourusername/scoutbar",
-    //   liveUrl: "https://scoutbar-demo.vercel.app",
-    //   features: [
-    //     "Fuzzy search algorithm",
-    //     "Keyboard navigation support",
-    //     "Customizable themes",
-    //     "Plugin architecture",
-    //     "Zero dependencies",
-    //   ],
-    // },
-    // {
-    //   id: 3,
-    //   title: "Sable Quer",
-    //   subtitle: "INTRODUCING",
-    //   description:
-    //     "Simplifies the use of React Query by offering a streamlined approach to managing queries and mutations.",
-    //   fullDescription:
-    //     "Sable Quer is a wrapper library around React Query that provides a more intuitive API for data fetching and state management. It reduces boilerplate code while maintaining all the powerful features of React Query.",
-    //   category: "Projects",
-    //   image: "/placeholder.svg?height=300&width=400",
-    //   bgColor: "bg-slate-700",
-    //   textColor: "text-white",
-    //   techStack: ["React", "TypeScript", "React Query", "Zustand", "Jest"],
-    //   githubUrl: "https://github.com/yourusername/sable-quer",
-    //   liveUrl: "https://sable-quer-docs.vercel.app",
-    //   features: [
-    //     "Simplified API design",
-    //     "Built-in error handling",
-    //     "Automatic retries",
-    //     "TypeScript support",
-    //     "Comprehensive documentation",
-    //   ],
-    // },
-    // {
-    //   id: 4,
-    //   title: "Design System",
-    //   subtitle: "SWIFT CREATES",
-    //   description:
-    //     "A comprehensive design system built for modern web applications.",
-    //   fullDescription:
-    //     "A complete design system featuring reusable components, design tokens, and guidelines for building consistent user interfaces. Built with accessibility and scalability in mind.",
-    //   category: "Designs",
-    //   image: "/placeholder.svg?height=300&width=400",
-    //   bgColor: "bg-gradient-to-br from-yellow-100 to-orange-200",
-    //   techStack: [
-    //     "React",
-    //     "Storybook",
-    //     "Styled Components",
-    //     "Design Tokens",
-    //     "Figma",
-    //   ],
-    //   githubUrl: "https://github.com/yourusername/design-system",
-    //   liveUrl: "https://design-system-storybook.vercel.app",
-    //   features: [
-    //     "50+ reusable components",
-    //     "Design tokens system",
-    //     "Dark mode support",
-    //     "Accessibility compliant",
-    //     "Storybook documentation",
-    //   ],
-    // },
-    // {
-    //   id: 5,
-    //   title: "E-commerce Platform",
-    //   subtitle: "MODERN SHOPPING",
-    //   description:
-    //     "A full-featured e-commerce platform with React and Node.js.",
-    //   fullDescription:
-    //     "A complete e-commerce solution featuring product management, shopping cart, payment processing, and order management. Built with modern technologies and best practices for scalability and performance.",
-    //   category: "Projects",
-    //   image: "/placeholder.svg?height=300&width=400",
-    //   bgColor: "bg-gradient-to-br from-blue-100 to-purple-200",
-    //   techStack: ["React", "Node.js", "MongoDB", "Stripe", "Express", "JWT"],
-    //   githubUrl: "https://github.com/yourusername/ecommerce-platform",
-    //   liveUrl: "https://ecommerce-demo.vercel.app",
-    //   features: [
-    //     "Product catalog management",
-    //     "Shopping cart functionality",
-    //     "Secure payment processing",
-    //     "Order tracking system",
-    //     "Admin dashboard",
-    //   ],
-    // },
+    {
+      id: 2,
+      title: "ShiftSL",
+      subtitle: "",
+      description:
+        "A Dynamic Roster Scheduling System and efficient leave management software.",
+      fullDescription:
+        "A Dynamic Roster Scheduling System and efficient leave management software for shift-based work environments. Specialized to work with the health care sector of Sri Lanka. I took part exclusively in Mobile application development of the ShiftSl app, working with Flutter. Integrated Firebase authentication to work seamlessly with registering and logging in users. ",
+      category: "Projects",
+      image: "/placeholder.svg?height=300&width=400",
+      bgColor: "bg-slate-800",
+      textColor: "text-white",
+      techStack: ["Flutter", "React.js", "SpringBoot", "Mysql"],
+      githubUrl: "https://github.com/ShiftSL",
+      liveUrl: "https://github.com/ShiftSL",
+      features: [
+        "Leave management system",
+        "Dynamic roster scheduling",
+        "Shift swapping",
+        "Real-time notifications",
+        "User-friendly mobile interface",
+      ],
+    },
+    {
+      id: 3,
+      title: "BookStore Application",
+      subtitle: "INTRODUCING",
+      description: "A RESTful API for a Bookstore application using JAX-RS",
+      fullDescription:
+        "A RESTful API for a Bookstore application using JAX-RS. The API provides functionality for managing books, authors, customers, shopping carts, and orders. The implementation follows REST principles and uses JAX-RS, JSON, and in-memory data storage without relying on external frameworks or databases.",
+      category: "Projects",
+      image: "/placeholder.svg?height=300&width=400",
+      bgColor: "bg-slate-700",
+      textColor: "text-white",
+      techStack: ["Java", "Jax-RS", "JSON"],
+      githubUrl: "https://github.com/yourusername/sable-quer",
+      liveUrl: "https://sable-quer-docs.vercel.app",
+      features: ["CRUD operations for books, authors, and customers"],
+    },
+    {
+      id: 4,
+      title: "Real-time Ticketing Application",
+      subtitle: "",
+      description:
+        "Developed a real-time ticketing system supporting concurrent ticket releases and purchases with multithreading and synchronization.",
+      fullDescription:
+        "Developed a real-time ticketing system supporting concurrent ticket releases and purchases with multithreading and synchronization to maintain data integrity. Worked with multi-threading and OOP concepts to implement a synchronised, thread-safe environment.",
+      category: "Projects",
+      image: "/placeholder.svg?height=300&width=400",
+      bgColor: "bg-gradient-to-br from-yellow-800 to-orange-600",
+      techStack: ["Java"],
+      githubUrl:
+        "https://github.com/malindubandara/Real-time-Ticketing-Web-App",
+      liveUrl: "https://github.com/malindubandara/Real-time-Ticketing-Web-App",
+      features: [
+        "Real-time ticket availability updates",
+        "Concurrent ticket purchases",
+      ],
+    },
+    {
+      id: 5,
+      title: "EcoVerso",
+      subtitle: "",
+      description:
+        "E-commerce platform with product catalog, shopping cart, and Cheakout functionality.",
+      fullDescription:
+        "As part of my first year's second-semester group coursework for the Web Design and Development module, I created an online store, accompanying checkout page and splash screen",
+      category: "Projects",
+      image: "/placeholder.svg?height=300&width=400",
+      bgColor: "bg-gradient-to-br from-blue-800 to-purple-800",
+      techStack: ["HTML", "CSS", "JavaScript"],
+      githubUrl: "https://github.com/malindubandara/EcoVerso",
+      liveUrl: "https://github.com/malindubandara/EcoVerso",
+      features: [
+        "Product catalog management",
+        "Shopping cart functionality",
+        "Checkout page",
+        "Responsive design",
+      ],
+    },
     // {
     //   id: 6,
     //   title: "Portfolio Template",
@@ -188,8 +172,7 @@ const Projects = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
               Projects.
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Hover over projects to see the tech stack, click to view detailed
-              information
+              Here are some of the projects I've worked on.
             </p>
           </motion.div>
 

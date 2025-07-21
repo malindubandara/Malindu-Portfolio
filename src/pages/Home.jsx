@@ -35,7 +35,7 @@ const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
               >
                 Hello! I'm
               </p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-400 mb-2">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-500 mb-2">
                 Malindu Bandara
               </h1>
               <h2
@@ -78,8 +78,8 @@ const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
                 whileHover={{ scale: 1.1 }}
                 className={
                   darkMode
-                    ? "w-10 h-10 sm:w-12 sm:h-12 bg-gray-600 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-400 hover:text-white transition-colors"
-                    : "w-10 h-10 sm:w-12 sm:h-12 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-400 hover:text-white transition-colors"
+                    ? "w-10 h-10 sm:w-12 sm:h-12 bg-gray-600 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"
+                    : "w-10 h-10 sm:w-12 sm:h-12 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"
                 }
               >
                 <svg
@@ -95,8 +95,8 @@ const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
                 whileHover={{ scale: 1.1 }}
                 className={
                   darkMode
-                    ? "w-10 h-10 sm:w-12 sm:h-12 bg-gray-600 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-400 hover:text-white transition-colors"
-                    : "w-10 h-10 sm:w-12 sm:h-12 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-400 hover:text-white transition-colors"
+                    ? "w-10 h-10 sm:w-12 sm:h-12 bg-gray-600 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"
+                    : "w-10 h-10 sm:w-12 sm:h-12 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"
                 }
               >
                 <svg
@@ -123,7 +123,7 @@ const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-green-400 text-white px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors text-sm sm:text-base"
+                  className="bg-emerald-500 text-white px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition-colors text-sm sm:text-base"
                 >
                   Download CV
                 </motion.button>
@@ -167,15 +167,15 @@ const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
 
             {/* Main Blob Background */}
             <div className="relative">
-              <motion.div
+              {/* <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className="absolute inset-0 -z-10"
+                className="absolute inset-0"
               >
                 <svg
                   viewBox="0 0 400 400"
-                  className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 text-green-400"
+                  className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 text-emerald-500"
                 >
                   <path
                     d="M200,50 C280,50 350,120 350,200 C350,280 280,350 200,350 C120,350 50,280 50,200 C50,120 120,50 200,50 Z"
@@ -183,7 +183,7 @@ const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
                     opacity="0.9"
                   />
                 </svg>
-              </motion.div>
+              </motion.div> */}
 
               {/* Profile Image */}
               <motion.div
@@ -195,10 +195,28 @@ const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
                 <img
                   src={profileImg}
                   alt="Profile"
-                  className="w-64 h-80 sm:w-64 sm:h-80 lg:w-80 lg:h-96 object-cover rounded-lg"
+                  className="w-1/4 h-1/4 sm:w-64 sm:h-80 lg:w-auto lg:h-auto object-cover rounded-lg"
                 />
               </motion.div>
             </div>
+
+            {/* Shape Behind Profile Image */}
+            <motion.div
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="absolute inset-0  flex justify-center items-center"
+            >
+              <svg
+                viewBox="0 0 400 400"
+                className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 text-emerald-300"
+              >
+                <path
+                  d="M200,50 C280,50 350,120 350,200 C350,280 280,350 200,350 C120,350 50,280 50,200 C50,120 120,50 200,50 Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </motion.div>
 
             {/* Bottom Decorative Lines */}
             <div className="absolute -bottom-5 -right-5 sm:-bottom-10 sm:-right-10 w-24 h-12 sm:w-40 sm:h-20 opacity-20">
