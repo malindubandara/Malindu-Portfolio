@@ -195,7 +195,7 @@ const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
                 <img
                   src={profileImg}
                   alt="Profile"
-                  className="w-1/4 h-1/4 sm:w-64 sm:h-80 lg:w-auto lg:h-auto object-cover rounded-lg"
+                  className="w-96 h-full sm:w-52 sm:h-72 lg:w-5/6 lg:h-5/6 object-cover"
                 />
               </motion.div>
             </div>
@@ -209,7 +209,7 @@ const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
             >
               <svg
                 viewBox="0 0 400 400"
-                className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 text-emerald-300"
+                className="w-72 h-72 sm:w-auto sm:h-auto lg:w-auto lg:h-auto text-emerald-300"
               >
                 <path
                   d="M200,50 C280,50 350,120 350,200 C350,280 280,350 200,350 C120,350 50,280 50,200 C50,120 120,50 200,50 Z"
