@@ -19,7 +19,7 @@ import "./App.css";
 import CustomCursor from "./components/CustomCursor";
 
 function AppContent() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
 

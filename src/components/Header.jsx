@@ -4,6 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSwipeGestures } from "../hooks/useSwipeGestures";
+import { FaSun } from "react-icons/fa";
+import { FaMoon } from "react-icons/fa";
+import { HiSun } from "react-icons/hi";
+import { HiMoon } from "react-icons/hi";
 
 const Header = ({ darkMode, toggleDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -151,9 +155,13 @@ const Header = ({ darkMode, toggleDarkMode }) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={toggleDarkMode}
-              className="p-2 rounded-full border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className={
+                darkMode
+                  ? "p-2 rounded-full border border-gray-300 dark:border-gray-600 hover:bg-emerald-500 transition-colors"
+                  : "p-2 rounded-full border border-gray-300 dark:border-gray-600 hover:bg-emerald-100 transition-colors"
+              }
             >
-              {darkMode ? "☀️" : "🌙"}
+              {darkMode ? <HiSun /> : <HiMoon />}
             </motion.button>
           </nav>
 
@@ -281,7 +289,9 @@ const Header = ({ darkMode, toggleDarkMode }) => {
                   }}
                   className="flex items-center space-x-3 p-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors w-full"
                 >
-                  <span className="text-2xl">{darkMode ? "☀️" : "🌙"}</span>
+                  <span className="text-2xl">
+                    {darkMode ? <FaSun /> : <FaMoon />}
+                  </span>
                   <span className="text-lg font-medium">
                     {darkMode ? "Light Mode" : "Dark Mode"}
                   </span>
