@@ -17,7 +17,7 @@ const SwipeIndicator = ({ currentIndex, totalPages, darkMode }) => {
             key={index}
             className={`w-2 h-2 rounded-full transition-colors duration-300 ${
               index === currentIndex
-                ? "bg-red-500"
+                ? "bg-emerald-400"
                 : darkMode
                 ? "bg-gray-600"
                 : "bg-gray-300"
