@@ -4,8 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSwipeGestures } from "../hooks/useSwipeGestures";
-import { FaSun } from "react-icons/fa";
-import { FaMoon } from "react-icons/fa";
 import { HiSun } from "react-icons/hi";
 import { HiMoon } from "react-icons/hi";
 
@@ -99,7 +97,7 @@ const Header = ({ darkMode, toggleDarkMode }) => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4 backdrop-blur-md bg-opacity-80"
+        className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4 backdrop-blur-md bg-opacity-80 bord"
         style={{
           backgroundColor: darkMode
             ? "rgba(23,23,23, 0.8)"
@@ -108,12 +106,12 @@ const Header = ({ darkMode, toggleDarkMode }) => {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <motion.div
-            whileHover={{ rotate: 180 }}
+            whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
-            className="text-2xl font-bold cursor-pointer z-50"
+            className="text-2xl font-bold cursor-pointer z-50 hover:text-emerald-500"
           >
             <Link to="/" onClick={closeMenu}>
-              ✦
+              MB
             </Link>
           </motion.div>
 

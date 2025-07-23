@@ -167,24 +167,6 @@ const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
 
             {/* Main Blob Background */}
             <div className="relative">
-              {/* <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.6 }}
-                className="absolute inset-0"
-              >
-                <svg
-                  viewBox="0 0 400 400"
-                  className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 text-emerald-500"
-                >
-                  <path
-                    d="M200,50 C280,50 350,120 350,200 C350,280 280,350 200,350 C120,350 50,280 50,200 C50,120 120,50 200,50 Z"
-                    fill="currentColor"
-                    opacity="0.9"
-                  />
-                </svg>
-              </motion.div> */}
-
               {/* Profile Image */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
