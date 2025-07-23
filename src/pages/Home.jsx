@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useSwipeGestures } from "../hooks/useSwipeGestures";
-import profileImg from "../assets/profile.png";
+import profileImg from "../assets/malindu_bandara_profile.png";
 
 const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
   const swipeGestures = useSwipeGestures(onSwipeLeft, onSwipeRight, 100);
