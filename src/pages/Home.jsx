@@ -167,6 +167,24 @@ const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
 
             {/* Main Blob Background */}
             <div className="relative">
+              {/* <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.6 }}
+                className="absolute inset-0 -z-10"
+              >
+                <svg
+                  viewBox="0 0 400 400"
+                  className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 text-red-500"
+                >
+                  <path
+                    d="M200,50 C280,50 350,120 350,200 C350,280 280,350 200,350 C120,350 50,280 50,200 C50,120 120,50 200,50 Z"
+                    fill="currentColor"
+                    opacity="0.9"
+                  />
+                </svg>
+              </motion.div> */}
+
               {/* Profile Image */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
@@ -174,11 +192,20 @@ const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 className="relative z-10"
               >
-                <img
-                  src={profileImg}
-                  alt="Profile"
-                  className="w-96 h-full sm:w-52 sm:h-72 lg:w-5/6 lg:h-5/6 object-cover"
-                />
+                <div className="w-80 h-96 sm:w-64 sm:h-80 lg:w-80 lg:h-96 ">
+                  <img
+                    src={profileImg}
+                    alt="Malindu Bandara - Creative Developer"
+                    className="w-full h-full object-contain object-center"
+                    style={{
+                      filter: darkMode
+                        ? "brightness(0.9) contrast(1.1)"
+                        : "brightness(1) contrast(1)",
+                      transition: "filter 0.3s ease",
+                      transform: "scale(1.5)",
+                    }}
+                  />
+                </div>
               </motion.div>
             </div>
 
@@ -191,7 +218,14 @@ const Home = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
             >
               <svg
                 viewBox="0 0 400 400"
-                className="w-72 h-72 sm:w-auto sm:h-auto lg:w-auto lg:h-auto text-emerald-300"
+                className="w-72 h-72 sm:w-80 sm:h-80 md:w-72 md:h-72 lg:w-auto lg:h-auto text-emerald-300"
+                style={{
+                  filter: darkMode
+                    ? "brightness(0.9) contrast(1.1)"
+                    : "brightness(1) contrast(1)",
+                  transition: "filter 0.3s ease",
+                  transform: "scale(1)",
+                }}
               >
                 <path
                   d="M200,50 C280,50 350,120 350,200 C350,280 280,350 200,350 C120,350 50,280 50,200 C50,120 120,50 200,50 Z"

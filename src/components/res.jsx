@@ -6,7 +6,6 @@ import { Link, useLocation } from "react-router-dom";
 import { useSwipeGestures } from "../hooks/useSwipeGestures";
 import { HiSun } from "react-icons/hi";
 import { HiMoon } from "react-icons/hi";
-import { FaMoon } from "react-icons/fa";
 
 const Header = ({ darkMode, toggleDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -100,52 +99,51 @@ const Header = ({ darkMode, toggleDarkMode }) => {
         transition={{ duration: 0.6 }}
         className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4 backdrop-blur-md bg-opacity-80"
         style={{
-          backgroundColor: darkMode
-            ? "rgba(23, 23, 23, 0.5)"
-            : "rgba(249, 250, 251, 0.5)",
+          backgroundColor: darkMode ? "rgba(23,23,23)" : "rgba(249, 250, 251)",
+          // color: darkMode ? "#1f2937" : "#f9fafb",
         }}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <motion.div
-            whileHover={{ rotate: 180 }}
+            whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
-            className="text-2xl font-bold cursor-pointer z-50"
+            className="text-2xl font-bold cursor-pointer z-50 hover:text-emerald-500"
           >
             <Link to="/" onClick={closeMenu}>
-              ✦
+              MB
             </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8 font-extrabold">
             <Link
               to="/"
-              className={`hover:text-emerald-500 transition-colors duration-200 ${
-                isActive("/") ? "text-emerald-500 font-semibold" : ""
+              className={`hover:text-green-400 transition-colors duration-200 ${
+                isActive("/") ? "text-green-400 font-semibold" : ""
               }`}
             >
               Home
             </Link>
             <Link
               to="/about"
-              className={`hover:text-emerald-500 transition-colors duration-200 ${
-                isActive("/about") ? "text-emerald-500 font-semibold" : ""
+              className={`hover:text-green-400 transition-colors duration-200 ${
+                isActive("/about") ? "text-green-400 font-semibold" : ""
               }`}
             >
               About
             </Link>
             <Link
               to="/projects"
-              className={`hover:text-emerald-500 transition-colors duration-200 ${
-                isActive("/projects") ? "text-emerald-500 font-semibold" : ""
+              className={`hover:text-green-400 transition-colors duration-200 ${
+                isActive("/projects") ? "text-green-400 font-semibold" : ""
               }`}
             >
               Projects
             </Link>
             <Link
               to="/contact"
-              className={`hover:text-emerald-500 transition-colors duration-200 ${
-                isActive("/contact") ? "text-emerald-500 font-semibold" : ""
+              className={`hover:text-green-400 transition-colors duration-200 ${
+                isActive("/contact") ? "text-green-400 font-semibold" : ""
               }`}
             >
               Contact
@@ -225,7 +223,7 @@ const Header = ({ darkMode, toggleDarkMode }) => {
             transition={{ type: "tween", duration: 0.3 }}
             className={
               darkMode
-                ? "fixed top-0 right-0 h-full w-80 max-w-sm bg-neutral-900 dark:bg-gray-900 z-40 lg:hidden shadow-2xl"
+                ? "fixed top-0 right-0 h-full w-80 max-w-sm bg-slate-900 dark:bg-gray-900 z-40 lg:hidden shadow-2xl"
                 : "fixed top-0 right-0 h-full w-80 max-w-sm bg-white dark:bg-gray-900 z-40 lg:hidden shadow-2xl"
             }
             {...menuSwipeGestures}
@@ -242,8 +240,8 @@ const Header = ({ darkMode, toggleDarkMode }) => {
               <nav className="flex flex-col space-y-8">
                 <Link
                   to="/"
-                  className={`text-2xl font-semibold hover:text-emerald-500 transition-colors ${
-                    isActive("/") ? "text-emerald-500" : ""
+                  className={`text-2xl font-semibold hover:text-green-400 transition-colors ${
+                    isActive("/") ? "text-green-400" : ""
                   }`}
                   onClick={closeMenu}
                 >
@@ -251,8 +249,8 @@ const Header = ({ darkMode, toggleDarkMode }) => {
                 </Link>
                 <Link
                   to="/about"
-                  className={`text-2xl font-semibold hover:text-emerald-500 transition-colors ${
-                    isActive("/about") ? "text-emerald-500" : ""
+                  className={`text-2xl font-semibold hover:text-green-400 transition-colors ${
+                    isActive("/about") ? "text-green-400" : ""
                   }`}
                   onClick={closeMenu}
                 >
@@ -260,8 +258,8 @@ const Header = ({ darkMode, toggleDarkMode }) => {
                 </Link>
                 <Link
                   to="/projects"
-                  className={`text-2xl font-semibold hover:text-emerald-500 transition-colors ${
-                    isActive("/projects") ? "text-emerald-500" : ""
+                  className={`text-2xl font-semibold hover:text-green-400 transition-colors ${
+                    isActive("/projects") ? "text-green-400" : ""
                   }`}
                   onClick={closeMenu}
                 >
@@ -269,8 +267,8 @@ const Header = ({ darkMode, toggleDarkMode }) => {
                 </Link>
                 <Link
                   to="/contact"
-                  className={`text-2xl font-semibold hover:text-emerald-500 transition-colors ${
-                    isActive("/contact") ? "text-emerald-500" : ""
+                  className={`text-2xl font-semibold hover:text-green-400 transition-colors ${
+                    isActive("/contact") ? "text-green-400" : ""
                   }`}
                   onClick={closeMenu}
                 >
@@ -289,7 +287,7 @@ const Header = ({ darkMode, toggleDarkMode }) => {
                   className="flex items-center space-x-3 p-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors w-full"
                 >
                   <span className="text-2xl">
-                    {darkMode ? <HiSun /> : <HiMoon />}
+                    {darkMode ? <FaSun /> : <FaMoon />}
                   </span>
                   <span className="text-lg font-medium">
                     {darkMode ? "Light Mode" : "Dark Mode"}
