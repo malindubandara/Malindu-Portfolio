@@ -55,19 +55,27 @@ const About = ({ darkMode, onSwipeLeft, onSwipeRight }) => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <p>
-                I'm a passionate full-stack developer with a love for creating
-                beautiful, functional web experiences. I specialize in modern
-                JavaScript frameworks and have a keen eye for design.
+                Hi, I’m Malindu Bandara — a passionate Computer Science
+                undergraduate at the University of Westminster with a strong
+                interest in front-end development and full-stack web
+                technologies. I love building modern, responsive, and
+                user-friendly web applications that not only look great but also
+                solve real problems.
               </p>
               <p>
-                My journey in web development started with a curiosity about how
-                websites work, and it has evolved into a career where I get to
-                solve complex problems and create digital solutions that make a
-                difference.
+                I specialize in tools like React, Tailwind CSS, Framer Motion,
+                and JavaScript for front-end development, and I’m also
+                experienced in Node.js, MongoDB, and MySQL on the back end. I
+                enjoy the process of transforming ideas into interactive digital
+                experiences and continuously strive to improve my skills and
+                stay updated with the latest in web development.
               </p>
               <p>
-                When I'm not coding, you can find me exploring new technologies,
-                designing user interfaces..
+                When I’m not coding, you can find me exploring UI/UX design in
+                Figma, sharpening my creative side in Photoshop, or contributing
+                to collaborative projects on GitHub. I’m currently seeking
+                internship opportunities where I can contribute, learn from
+                experienced developers, and grow as a professional.
               </p>
             </motion.div>
           </div>
