@@ -102,7 +102,7 @@ const Header = ({ darkMode, toggleDarkMode }) => {
         style={{
           backgroundColor: darkMode
             ? "rgba(23, 23, 23, 0.5)"
-            : "rgba(249, 250, 251, 0.5)",
+            : "rgba(249, 250, 251, 0.8)",
         }}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
